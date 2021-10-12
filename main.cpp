@@ -17,8 +17,7 @@ void writePicture(string picture,const vector<vector <int> > & red, const vector
 // Programme principal � completer...
 int main()
 {
-
-  // ... � vous de jouer ! ...
+    //loadPicture();
 }
 
 
