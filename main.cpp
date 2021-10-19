@@ -48,10 +48,14 @@ int main(){
     */
 
     ///Q4
+    /*
     if(testCouleurRouge(red)){
-        loadPicture(Image/pomme.ppm, red, green, blue);
-        writePicture(Image/pomme-sansRouge.ppm, empty, green, blue);
+        writePicture("Image/pomme-sansRouge.ppm", empty, green, blue);
     }
+    */
+
+    ///Q5
+    
 }
 
 bool testCouleurRouge(const vector<vector <int> > & red){
