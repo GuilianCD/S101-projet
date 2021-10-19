@@ -13,20 +13,65 @@ const int MAX = 100;
 void loadPicture(string picture,  vector <vector <int> > & red,  vector <vector <int> > & green,  vector <vector <int> >  & blue);
 void writePicture(string picture,const vector<vector <int> > & red, const vector<vector <int> > & green, const  vector<vector <int> >  & blue);
 
+bool testCouleurRouge(const vector<vector <int> > & red);
+
 
 // Programme principal � completer...
-int main()
-{
-    //loadPicture();
+int main(){
+    vector<vector<int>> red;
+    vector<vector<int>> green;
+    vector<vector<int>> blue;
+    loadPicture("Image/pomme.ppm", red, green, blue);
+    vector<vector<int>> empty (red.size(), vector<int>(red[0].size(), 0));
+    /// Q1
+    //writePicture("Image/pomme-copie.ppm", red, green, blue);
+
+    ///Q2
+    /*
+    // On initialise un vecteur 'empty', vide, qui servira pour remplacer
+    // les valeurs d'une composante par 0 sur toute l'image.
+    // --
+    // (Sachant que la taille du sous-tableau est le même pour chaque
+    // sous-tableau, on peut demander la taille du premier à chaque fois)
+    // --
+    // NOTE ! Cette opération est extremement couteuse (ce pourquoi elle n'est
+    // executée qu'une seule fois)
+
+    writePicture("Image/pomme-red.ppm", red, empty, empty);
+    writePicture("Image/pomme-green.ppm", empty, green, empty);
+    writePicture("Image/pomme-blue.ppm", empty, empty, blue);
+    */
+
+    ///Q3
+    /*
+    cout << "rouge : " << testCouleurRouge(red) << endl;
+    */
+
+    ///Q4
+    if(testCouleurRouge(red)){
+        loadPicture(Image/pomme.ppm, red, green, blue);
+        writePicture(Image/pomme-sansRouge.ppm, empty, green, blue);
+    }
 }
 
+bool testCouleurRouge(const vector<vector <int> > & red){
+    int i = 0, j;
+    bool redFound = false;
 
+    //Do while car au moins 1 traitement
+    do{
+        j = 0;
+        //Do while car au moins 1 traitement
+        do{
+            redFound = red[i][j] > 0;
+            j++;                       
+        ///                
+        }while(!redFound && j <= red[0].size());
+        i++;
+    }while(!redFound && i <= red.size());
 
-
-
-
-
-
+    return redFound;
+}
 
 /*
 ======================================================================================================
